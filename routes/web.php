@@ -29,3 +29,11 @@ Route::post('form-action', [EnquiriesController::class, 'store'])->name('formact
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Route::get('/storage-link', function () {
+    $target = storage_path('app/public');
+    $link = public_path('/storage');
+    echo symlink($target, $link);
+    // echo "symbolic link created successfully";
+});
