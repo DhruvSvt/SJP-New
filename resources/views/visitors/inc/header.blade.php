@@ -1,12 +1,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
-	$("#catlog").fancybox({
-		'width'				: 450,
-		'height'			: 450,
-		'type'				: 'iframe'
-	});
+        $("#catlog").fancybox({
+            'width': 450,
+            'height': 450,
+            'type': 'iframe'
+        });
 
-});
+    });
 </script>
 
 <!-- Sweet Alert CDN -->
@@ -98,8 +98,9 @@
                 <div class="mobilenumbers">
                     <!-- <a href="https://api.whatsapp.com/send?phone=919321177663&amp;text=" target="_blank" class="call"><img src="{{ config('app.url') }}/images/icon-whatsapp.png" alt="" />93211 77663</a> <span class="separator">|</span> -->
                     <a href="javascript:;" class="call"><img src="{{ config('app.url') }}/images/footer_callus.png"
-                            width="21" alt="" />932292392</a> <span class="separator">|</span> <a href="javascript:;"
-                        class="call" src="{{ config('app.url') }}/images/footer_callus.png" width="21" alt="" />99206
+                            width="21" alt="" />932292392</a> <span class="separator">|</span> <a
+                        href="javascript:;" class="call" src="{{ config('app.url') }}/images/footer_callus.png"
+                        width="21" alt="" />99206
                     50797</a>
                 </div>
 
@@ -136,7 +137,7 @@
         <div class="navbar-header">
             <span class="topicons">
                 <!--<a href="https://api.whatsapp.com/send?phone=919321177663&amp;text=" target="_blank"><img src="{{ config('app.url') }}/images/icon-whatsapp.png" alt="" /></a>
-					-->
+     -->
                 <a href="tel:9548942643"><img src="{{ config('app.url') }}/images/footer_callus.png" width="21"
                         alt="" /></a>
                 <a href="tel:5623531556"><img src="{{ config('app.url') }}/images/icon-call2.png" height="20"
@@ -161,32 +162,41 @@
                         class="dropdown-toggle enable">Our Products&nbsp;<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @php
-                        $Footer_gallery = \App\Models\Product_category::orderBy('order', 'ASC')->get();
+                            $Footer_gallery = TCG\Voyager\Models\Category::orderBy('order', 'ASC')
+                                ->whereNull('parent_id')
+                                ->get();
                         @endphp
 
                         @foreach ($Footer_gallery as $row)
-
-
-                        <li><a href="{{ route('category',$row->slug) }}" class="dropdown-toggle enable">{{ $row->name
-                                }}</a></li>
+                            @php
+                                $id = $row->id;
+                                $Footer_gallery1 = TCG\Voyager\Models\Category::where('parent_id', $id)
+                                    ->orderBy('order', 'ASC')
+                                    ->get();
+                            @endphp
+                            @if ($Footer_gallery1->count() >= 1)
+                                <li class="dropdown-submenu"><a href="#"
+                                        class="dropdown-toggle enable">{{ $row->name }}&nbsp;
+                                        <!--<span class="caret"></span>-->
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @foreach ($Footer_gallery1 as $item)
+                                            <li><a
+                                                    href="{{ route('category', $item->slug) }}">{{ $item->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @else
+                                <li><a href="{{ route('category', $row->slug) }}">{{ $row->name }}</a></li>
+                            @endif
                         @endforeach
 
-                        {{-- <li class="dropdown-submenu"><a href="" class="dropdown-toggle enable">POUCHES&nbsp;
-                                <!--<span class="caret"></span>-->
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ route('single-piece') }}">SINGLE PIECE</a></li>
-                                <li><a href="#">POUCHE SET</a></li>
-                            </ul>
-                        </li> --}}
-
-
+                    </ul>
                 </li>
-            </ul>
-            </li>
 
-            <li><a href="{{ route('contact-us') }}">Contact us</a></li>
-            {{-- <li><a href="">Blog</a></li> --}}
+                <li><a href="{{ route('contact-us') }}">Contact us</a></li>
+                {{-- <li><a href="">Blog</a></li> --}}
 
             </ul>
         </div>
@@ -203,8 +213,8 @@
         <form name="request_quote" id="request_quote" method="POST" enctype="multipart/form-data"
             action="{{ route('formaction') }}" class="">
             @csrf
-            <input name="act" id="act" type="hidden" value="request_quote" /> <input name="cur_page" id="cur_page"
-                type="hidden" value="/" />
+            <input name="act" id="act" type="hidden" value="request_quote" /> <input name="cur_page"
+                id="cur_page" type="hidden" value="/" />
             <div class="form-group">
                 <label for="formGroupExampleInput">Full Name</label>
                 <input type="text" name="person_name" class="form-control" id="formGroupExampleInput"
@@ -265,22 +275,22 @@
     </div>
 </div> --}}
 <script>
-    function check_validation(){
-	var email = $('#formGroupExampleInput2').val();
-	var contact = $('#formGroupExampleInput3').val();
-	//alert(contact.length);
-	if(email != ''){
-		var atpos=email.indexOf("@");
-		var dotpos=email.lastIndexOf(".");
-		if(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length){
-		  alert("Please Provide Valid Email");
-		  return false;
-		}
-	}
-	if(contact != '' && (contact.length<10 || isNaN(contact))){
-		alert("Please Enter Valid Contact.");
-		return false;
-	}
-	//alert("hello");
-}
+    function check_validation() {
+        var email = $('#formGroupExampleInput2').val();
+        var contact = $('#formGroupExampleInput3').val();
+        //alert(contact.length);
+        if (email != '') {
+            var atpos = email.indexOf("@");
+            var dotpos = email.lastIndexOf(".");
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                alert("Please Provide Valid Email");
+                return false;
+            }
+        }
+        if (contact != '' && (contact.length < 10 || isNaN(contact))) {
+            alert("Please Enter Valid Contact.");
+            return false;
+        }
+        //alert("hello");
+    }
 </script>

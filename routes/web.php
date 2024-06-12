@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [VisitorsController::class, 'index'])->name('home');
 Route::get('/category/{slug}', [VisitorsController::class, 'category'])->name('category');
+Route::get('/product/{slug}', [VisitorsController::class, 'product'])->name('product');
 Route::get('/company-profile', [VisitorsController::class, 'profile'])->name('company-profile');
 
 Route::view('/our-product', 'visitors.our-product')->name('our-product');

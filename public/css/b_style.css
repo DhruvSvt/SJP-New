@@ -647,6 +647,19 @@ footer {
     border-radius: 5px;
 }
 
+.leftbar-img {
+    float: left;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.leftbar-img img {
+    float: left;
+    width: 35rem;
+    height: auto;
+    border-radius: 5px;
+}
+
 .menu-text {
     float: right;
     font-size: 12px;
