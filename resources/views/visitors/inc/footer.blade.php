@@ -59,8 +59,7 @@
                     width="21" alt="" />&nbsp; +91
                 9368475560 (24*7)</a><br>
             <a href="mailto:s.jewelpack@gmail.com" class="call2"><img src="{{ config('app.url') }}/images/mail.png"
-                    width="21" alt="" />&nbsp;
-                s.jewelpack@gmail.com</a>
+                    width="21" alt="" />&nbsp;s.jewelpack@gmail.com</a>
 
         </div>
 
