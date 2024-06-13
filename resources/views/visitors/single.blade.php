@@ -65,15 +65,11 @@
                                     <div class="tb">
                                         <div class="tbc">
                                             <a href="{{ route('product', $row->slug) }}">
-                                                @foreach ($products as $product)
-                                                    @php $pictures = json_decode($product->image); @endphp
-
-                                                    @if (isset($pictures[0]))
-                                                        <img src="{{ Voyager::image($pictures[0]) }}" alt=""
-                                                            class="img">
-                                                    @endif
-                                                @endforeach
-                                                {{-- <img src="{{ Voyager::image($row->image[0]) }}" alt="Image Gallery"> --}}
+                                                @php $pictures = json_decode($row->image); @endphp
+                                                @if (isset($pictures[0]))
+                                                    <img src="{{ Voyager::image($pictures[0]) }}" alt=""
+                                                        class="img">
+                                                @endif
                                             </a>
 
                                         </div>
