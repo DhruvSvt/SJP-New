@@ -86,7 +86,7 @@
                                 <h4>Size :- {{ $product->size}}</h4>
                                 <hr>
 
-                                <h4>Prize :- ₹{{ $product->price ?? 0 }}/-</h4>
+                                <h4>Prize :- {{ $product->price ?? 0 }}</h4>
                                 <hr>
 
                                 <h4>Minimum Order Quantity :- {{ $product->moq}}</h4>
