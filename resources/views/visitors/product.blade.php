@@ -80,16 +80,16 @@
                                 </div>
                                 <hr>
 
-                                <h4>Color :- {{ $product->color }}</h4>
+                                <h4>Color :- {{ $product->color}}</h4>
                                 <hr>
 
-                                <h4>Size :- {{ $product->size }}</h4>
+                                <h4>Size :- {{ $product->size}}</h4>
                                 <hr>
 
-                                <h4>Prize :- ₹{{ $product->price }}/-</h4>
+                                <h4>Prize :- ₹{{ $product->price ?? 0 }}/-</h4>
                                 <hr>
 
-                                <h4>Minimum Order Quantity :- {{ $product->moq }}</h4>
+                                <h4>Minimum Order Quantity :- {{ $product->moq}}</h4>
 
 
                             </div>
