@@ -87,15 +87,15 @@
                             {{-- <div class="col-sm-3 col-xs-12"> --}}
                                 <a href="{{ route('category', $row->slug) }}" class="hvr-bounce-to-bottom product">
                                     <div class="prod_box">
-                                        <div class="img_div"><span></span><img src="{{ Voyager::image($row->image) }}"
-                                                alt="{{ $row->name }}"></div>
+                                        {{-- <div class="img_div"><span></span><img src="{{ Voyager::image($row->image) }}"
+                                                alt="{{ $row->name }}"></div> --}}
                                         <div class="prod_title">{{ $row->name }}</div>
                                     </div>
                                 </a>
                                 <a href="{{ route('category', $row->slug) }}" class="hvr-bounce-to-bottom product">
                                     <div class="prod_box">
-                                        <div class="img_div"><span></span><img src="{{ Voyager::image($row->image) }}"
-                                                alt="{{ $row->name }}"></div>
+                                        {{-- <div class="img_div"><span></span><img src="{{ Voyager::image($row->image) }}"
+                                                alt="{{ $row->name }}"></div> --}}
                                         <div class="prod_title">{{ $row->name }}</div>
                                     </div>
                                 </a>
