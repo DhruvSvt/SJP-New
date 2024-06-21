@@ -49,15 +49,15 @@
         <div class="stayConnected">
             <h2>Contact Details</h2>
             <p>212A, ASHOKA TOWER, MARUTI FOREST AGRA</p>
-            <a href="tel:9219693583" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
+            <a href="tel:9548942643" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
                     width="21" alt="" />&nbsp; +91
-                9219693583 (24*7)</a><br>
-            <a href="tel:7253936177" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
+                9548942643 (24*7)</a><br>
+            <a href="tel:9528033298" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
                     width="21" alt="" />&nbsp; +91
-                7253936177 (24*7)</a><br>
+                {{-- 9528033298 (24*7)</a><br>
             <a href="tel:9368475560" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
                     width="21" alt="" />&nbsp; +91
-                9368475560 (24*7)</a><br>
+                9368475560 (24*7)</a><br> --}}
             <a href="mailto:s.jewelpack@gmail.com" class="call2"><img src="{{ config('app.url') }}/images/mail.png"
                     width="21" alt="" />&nbsp;s.jewelpack@gmail.com</a>
 
