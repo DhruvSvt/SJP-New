@@ -54,8 +54,8 @@
                 9548942643 (24*7)</a><br>
             <a href="tel:9528033298" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
                     width="21" alt="" />&nbsp; +91
-                {{-- 9528033298 (24*7)</a><br>
-            <a href="tel:9368475560" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
+                9528033298 (24*7)</a><br>
+            {{-- <a href="tel:9368475560" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
                     width="21" alt="" />&nbsp; +91
                 9368475560 (24*7)</a><br> --}}
             <a href="mailto:s.jewelpack@gmail.com" class="call2"><img src="{{ config('app.url') }}/images/mail.png"
