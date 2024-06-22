@@ -25,7 +25,14 @@
             <h2>Categories</h2>
             <ul>
                 @php
-                $Footer_gallery = \App\Models\Product_category::orderBy('order', 'ASC')->get();
+
+                $Footer_gallery = DB::table('categories')
+                ->join('products', 'categories.id', '=', 'products.cid')
+                ->whereIn('categories.id', $cids)
+                ->select('categories.*')
+                ->distinct()
+                ->get();
+
                 @endphp
                 @foreach ($Footer_gallery as $row)
 
@@ -50,10 +57,10 @@
             <h2>Contact Details</h2>
             <p>212A, ASHOKA TOWER, MARUTI FOREST AGRA</p>
 
-            <a href="tel:9548942643" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png" <<<<<<< HEAD
-                    width="21" alt="" />&nbsp; +91 9548942643 (24*7)</a><br>
-            <a href="tel:9528033298" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png" width="21"
-                    alt="" />&nbsp;+91 9528033298 (24*7)</a><br>
+            <a href="tel:9548942643" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png" <<<<<<<
+                    HEAD width="21" alt="" />&nbsp; +91 9548942643 (24*7)</a><br>
+            <a href="tel:9528033298" class="call2"><img src="{{ config('app.url') }}/images/footer_callus.png"
+                    width="21" alt="" />&nbsp;+91 9528033298 (24*7)</a><br>
             <a href="mailto:s.jewelpack@gmail.com" class="call2"><img src="{{ config('app.url') }}/images/mail.png"
                     width="21" alt="" />&nbsp;s.jewelpack@gmail.com</a>
 
