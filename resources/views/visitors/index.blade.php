@@ -106,7 +106,7 @@
             </div>
         </div>
         <br>
-        <div class="section testimonials">
+        {{-- <div class="section testimonials">
             <div class="container">
                 <div class="head1">What our clients says </div>
                 <div style="text-align: center">
@@ -233,6 +233,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection

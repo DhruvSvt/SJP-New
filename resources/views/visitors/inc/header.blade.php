@@ -98,9 +98,8 @@
                 <div class="mobilenumbers">
                     <!-- <a href="https://api.whatsapp.com/send?phone=919321177663&amp;text=" target="_blank" class="call"><img src="{{ config('app.url') }}/images/icon-whatsapp.png" alt="" />93211 77663</a> <span class="separator">|</span> -->
                     <a href="javascript:;" class="call"><img src="{{ config('app.url') }}/images/footer_callus.png"
-                            width="21" alt="" />932292392</a> <span class="separator">|</span> <a
-                        href="javascript:;" class="call" src="{{ config('app.url') }}/images/footer_callus.png"
-                        width="21" alt="" />99206
+                            width="21" alt="" />932292392</a> <span class="separator">|</span> <a href="javascript:;"
+                        class="call" src="{{ config('app.url') }}/images/footer_callus.png" width="21" alt="" />99206
                     50797</a>
                 </div>
 
@@ -162,34 +161,32 @@
                         class="dropdown-toggle enable">Our Products&nbsp;<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @php
-                            $Footer_gallery = TCG\Voyager\Models\Category::orderBy('order', 'ASC')
-                                ->whereNull('parent_id')
-                                ->get();
+                        $Footer_gallery = TCG\Voyager\Models\Category::orderBy('order', 'ASC')
+                        ->whereNull('parent_id')
+                        ->get();
                         @endphp
 
                         @foreach ($Footer_gallery as $row)
-                            @php
-                                $id = $row->id;
-                                $Footer_gallery1 = TCG\Voyager\Models\Category::where('parent_id', $id)
-                                    ->orderBy('order', 'ASC')
-                                    ->get();
-                            @endphp
-                            @if ($Footer_gallery1->count() >= 1)
-                                <li class="dropdown-submenu"><a href="#"
-                                        class="dropdown-toggle enable">{{ $row->name }}&nbsp;
-                                        <!--<span class="caret"></span>-->
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        @foreach ($Footer_gallery1 as $item)
-                                            <li><a
-                                                    href="{{ route('category', $item->slug) }}">{{ $item->name }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                        @php
+                        $id = $row->id;
+                        $Footer_gallery1 = TCG\Voyager\Models\Category::where('parent_id', $id)
+                        ->orderBy('order', 'ASC')
+                        ->get();
+                        @endphp
+                        @if ($Footer_gallery1->count() >= 1)
+                        <li class="dropdown-submenu"><a href="#" class="dropdown-toggle enable">{{ $row->name }}&nbsp;
+                                <!--<span class="caret"></span>-->
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach ($Footer_gallery1 as $item)
+                                <li><a href="{{ route('category', $item->slug) }}">{{ $item->name }}</a>
                                 </li>
-                            @else
-                                <li><a href="{{ route('category', $row->slug) }}">{{ $row->name }}</a></li>
-                            @endif
+                                @endforeach
+                            </ul>
+                        </li>
+                        @else
+                        <li><a href="{{ route('category', $row->slug) }}">{{ $row->name }}</a></li>
+                        @endif
                         @endforeach
 
                     </ul>
@@ -213,8 +210,8 @@
         <form name="request_quote" id="request_quote" method="POST" enctype="multipart/form-data"
             action="{{ route('formaction') }}" class="">
             @csrf
-            <input name="act" id="act" type="hidden" value="request_quote" /> <input name="cur_page"
-                id="cur_page" type="hidden" value="/" />
+            <input name="act" id="act" type="hidden" value="request_quote" /> <input name="cur_page" id="cur_page"
+                type="hidden" value="/" />
             <div class="form-group">
                 <label for="formGroupExampleInput">Full Name</label>
                 <input type="text" name="person_name" class="form-control" id="formGroupExampleInput"
