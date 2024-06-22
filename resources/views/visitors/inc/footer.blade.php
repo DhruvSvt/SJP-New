@@ -26,6 +26,7 @@
             <ul>
                 @php
 
+                $cids = \App\Models\Product::select('cid')->groupBy('cid')->pluck('cid');
                 $Footer_gallery = DB::table('categories')
                 ->join('products', 'categories.id', '=', 'products.cid')
                 ->whereIn('categories.id', $cids)
