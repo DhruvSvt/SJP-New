@@ -8,7 +8,19 @@
 
     });
 </script>
+<style>
+    @media only screen and (max-width: 700px) {
+        .dropdown-submenu .dropdown-menu {
+            display: block;
+            background: rgb(0 0 0 / 31%);
+        }
 
+        .dropdown-submenu .dropdown-toggle {
+            color: #c3c3c3;
+            font-weight: 600;
+        }
+    }
+</style>
 <!-- Sweet Alert CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
     integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
@@ -157,6 +169,38 @@
             <ul class="nav navbar-nav ">
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('company-profile') }}">Company Profile</a></li>
+                <li class="dropdown"><a href="https://sjewelpack.in/our-product" data-toggle="dropdown"
+                        class="dropdown-toggle enable">Our Products&nbsp;<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li class="dropdown-submenu"><a href="#" class="dropdown-toggle enable">Pouches&nbsp;
+                                <!--<span class="caret"></span>-->
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://sjewelpack.in/category/single-pouche">Single Pouche</a>
+                                </li>
+                                <li><a href="https://sjewelpack.in/category/pouche-set">Pouche Set</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://sjewelpack.in/category/sjp-exclusive">SJP Exclusive</a></li>
+                        <li><a href="https://sjewelpack.in/category/women-carry-bags">Women Carry Bags</a></li>
+                        <li><a href="https://sjewelpack.in/category/complimentary-items">Complimentary Items</a></li>
+                        <li class="dropdown-submenu"><a href="#" class="dropdown-toggle enable">Boxes&nbsp;
+                                <!--<span class="caret"></span>-->
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://sjewelpack.in/category/regular-box">Regular Box</a>
+                                </li>
+                                <li><a href="https://sjewelpack.in/category/premium-box">Premium Box</a>
+                                </li>
+                                <li><a href="https://sjewelpack.in/category/stock-box">Stock Box</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
                 <li class="dropdown"><a href="{{ route('our-product') }}" data-toggle="dropdown"
                         class="dropdown-toggle enable">Our Products&nbsp;<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -235,10 +279,11 @@
                 <input type="tel" name="city" class="form-control" id="formGroupExampleInput4"
                     placeholder="Enter City Name" onblur="return check_validation();" required>
             </div> --}}
-<div class="form-group">
-    <label for="formGroupExampleInput4">City</label>
-    <input type="text" name="city" class="form-control" id="formGroupExampleInput4" placeholder="Enter City Name" onblur="return check_validation();" required>
-</div>
+            <div class="form-group">
+                <label for="formGroupExampleInput4">City</label>
+                <input type="text" name="city" class="form-control" id="formGroupExampleInput4"
+                    placeholder="Enter City Name" onblur="return check_validation();" required>
+            </div>
             <input type="submit" class="btn-orange" value="Send Enquiry" />
         </form>
     </div>
