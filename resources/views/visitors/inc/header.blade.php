@@ -12,7 +12,7 @@
     @media only screen and (max-width: 700px) {
         .dropdown-submenu .dropdown-menu {
             display: block;
-            background: rgb(0 0 0 / 31%);
+            background-color: rgb(0 0 0 / 31%) !important;
         }
 
         .dropdown-submenu .dropdown-toggle {
