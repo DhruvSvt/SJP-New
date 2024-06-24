@@ -230,12 +230,15 @@
                     required>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="formGroupExampleInput4">City</label>
                 <input type="tel" name="city" class="form-control" id="formGroupExampleInput4"
                     placeholder="Enter City Name" onblur="return check_validation();" required>
-            </div>
-
+            </div> --}}
+<div class="form-group">
+    <label for="formGroupExampleInput4">City</label>
+    <input type="text" name="city" class="form-control" id="formGroupExampleInput4" placeholder="Enter City Name" onblur="return check_validation();" required>
+</div>
             <input type="submit" class="btn-orange" value="Send Enquiry" />
         </form>
     </div>
